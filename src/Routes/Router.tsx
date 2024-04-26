@@ -3,9 +3,9 @@ import Home from '../pages/Home';
 
 function Routers () {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <Routes>
-        <Route path="/react-basic-4/" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
