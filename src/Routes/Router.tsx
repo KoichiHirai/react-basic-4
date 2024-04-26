@@ -5,7 +5,7 @@ function Routers () {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/react-basic-4/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
