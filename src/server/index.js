@@ -3,11 +3,13 @@ import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom/server';
 import App from '../App'; //ok
 
-console.log("StaticRouter at index.js" + StaticRouter + "\n\n"); //OK
-console.log("ReactDOMServer at index.js" + ReactDOMServer + "\n\n");
+// console.log("StaticRouter at index.js" + StaticRouter + "\n\n"); //OK
+// console.log("ReactDOMServer at index.js" + ReactDOMServer + "\n\n");
 
 const express = require('express'); 
 const app = express(); 
+
+app.use(express.static('dist'));
 
 // GETリクエストのルート（'/'）で「Hello world」を送信
 app.get('/', (req, res) => {
@@ -31,6 +33,19 @@ app.get('/', (req, res) => {
     </body>
     </html>
   `;
+
+//   const html = `
+//   <!DOCTYPE html>
+//   <html>
+//   <head>
+//     <title>SSR App</title>
+//   </head>
+//   <body>
+//     <div id="root">${content}</div>
+//     <script src="/server.js"></script>
+//   </body>
+//   </html>
+// `;
 
   res.send(html);
 });

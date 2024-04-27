@@ -6,7 +6,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals';
 
 console.log("App at index.tsx" + App + "\n\n");
-console.log("あああああああああ");
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById('root') as HTMLElement
