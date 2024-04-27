@@ -1,7 +1,11 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import Home from '../pages/Home';
+import { BrowserRouter, Route, Routes} from 'react-router-dom'; //OK
+import Home from '../pages/Home';//OK
 
-function Routers () {
+console.log("BrowserRouter at Router.tsx" + BrowserRouter + "\n\n"); 
+console.log("Route at Router.tsx" + Route + "\n\n"); 
+console.log("Routes at Router.tsx" + Routes + "\n\n"); 
+
+function Router () {
   return (
     <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <Routes>
@@ -11,4 +15,4 @@ function Routers () {
   );
 }
 
-export default Routers;
+export default Router;

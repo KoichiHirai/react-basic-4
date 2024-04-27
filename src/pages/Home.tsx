@@ -12,19 +12,19 @@ function Home() {
   let dailyGoals: Array<string> = [ dailyGoal1, dailyGoal2];
 
   return(
-    <div className='disPlayArea'>
+    <div className='displayArea'>
       <h2>目標</h2>
       <div className='goal'>{goal}</div>
       <h2>1回で完了するアクション</h2>
       {onetimeGoals.map((value, index) => (
-        <div className='checkbox'>
-          <input type='checkbox' key={index} /> {value}
+        <div className='checkbox' key={index}>
+          <input type='checkbox' /> {value}
         </div>
       ))}
       <h2>繰り返しのアクション</h2>
       {dailyGoals.map((value, index) => (
-        <div className='checkbox'>
-          <input type='checkbox' key={index} /> {value}
+        <div className='checkbox' key={index}>
+          <input type='checkbox' /> {value}
         </div>
       ))}
     </div>

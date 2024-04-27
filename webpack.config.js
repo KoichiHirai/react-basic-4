@@ -18,9 +18,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
+            presets: ['@babel/preset-env',["@babel/preset-react", { "runtime": "automatic" }], '@babel/preset-typescript']
           }
         }
+      },
+      {
+        test: /\.scss$/,  // .scssファイルに対する正規表現
+        use: [
+          'style-loader', // CSSをDOMに注入
+          'css-loader',   // CSSをCommonJSに変換
+          'sass-loader'   // SassをCSSにコンパイル
+        ]
       }
     ]
   },
