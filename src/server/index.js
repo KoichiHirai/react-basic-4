@@ -9,11 +9,10 @@ import App from '../App'; //ok
 const express = require('express'); 
 const app = express(); 
 
-app.use(express.static('dist'));
+app.use(express.static('public'));
 
-// GETリクエストのルート（'/'）で「Hello world」を送信
+// ReactをSSR
 app.get('/', (req, res) => {
-  // res.send('Hello world');
   const context = {};
   const content = ReactDOMServer.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -34,21 +33,13 @@ app.get('/', (req, res) => {
     </html>
   `;
 
-//   const html = `
-//   <!DOCTYPE html>
-//   <html>
-//   <head>
-//     <title>SSR App</title>
-//   </head>
-//   <body>
-//     <div id="root">${content}</div>
-//     <script src="/server.js"></script>
-//   </body>
-//   </html>
-// `;
-
   res.send(html);
 });
+
+// GETリクエストのルート（'/'）で「Hello world」を送信
+// app.get('/', (req, res) => {
+//   res.send('Hello world');
+// });
 
 const PORT = 9000; 
 app.listen(PORT, () => {

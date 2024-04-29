@@ -5,7 +5,7 @@ import './index.scss';
 import App from './App'
 import reportWebVitals from './reportWebVitals';
 
-console.log("App at index.tsx" + App + "\n\n");
+// console.log("App at index.tsx" + App + "\n\n");
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById('root') as HTMLElement
