@@ -27,9 +27,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build:server": "webpack --config webpack.config.js",
-    "build:server:dev": "webpack --config webpack.config.js --mode development",
-    "build:server:prod": "webpack --config webpack.config.js --mode production"
+    "build:webpack": "webpack --config webpack.config.server.js && webpack --config webpack.config.client.js"
   },
   "eslintConfig": {
     "extends": [

@@ -9,7 +9,7 @@ import App from '../App'; //ok
 const express = require('express'); 
 const app = express(); 
 
-app.use(express.static('public'));
+app.use(express.static('client'));
 
 // ReactをSSR
 app.get('/', (req, res) => {
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <div id="root">${content}</div>
-      <script src="client_bundle.js"></script>
+      <script src="./client_bundle.js"></script>
     </body>
     </html>
   `;
